@@ -8,7 +8,7 @@ Like `go doc` but with colors.
 $ go get -u github.com/inancgumus/godocc
 ```
 
-# Usage
+## Usage
 
 Accepts all the arguments and flags `go doc` works with. Godocc is just a simple wrapper around the go doc tool.
 
@@ -20,7 +20,7 @@ $ godocc ioutil WriteFile
 ![godocc sample 1](samples/sample1.png)
 ![godocc sample 2](samples/sample2.png)
 
-# Styling
+## Styling
 
 godocc comes with many colors! Configure the color of the output by setting the following env variable:
 
