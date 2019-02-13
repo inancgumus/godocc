@@ -14,10 +14,10 @@ func main() {
 	cmd := exec.Command("go", args...)
 	cmd.Env = os.Environ()
 
-	output, err := cmd.CombinedOutput()
-	if err != nil {
-		panic(err)
-	}
+	// ignore the error for now.
+	// output contains the error as well.
+	// so the error will be printed.
+	output, _ := cmd.CombinedOutput()
 
 	// remove the newline first
 	// then reprint later on: after turning off the coloring
@@ -31,8 +31,7 @@ func main() {
 	}
 
 	stdout := colorable.NewColorableStdout()
-	err = quick.Highlight(stdout,
-		string(output),
+	err := quick.Highlight(stdout, string(output),
 		"go", "terminal256", style)
 	if err != nil {
 		panic(err)
