@@ -19,6 +19,12 @@ func main() {
 		panic(err)
 	}
 
+	// remove the newline first
+	// then reprint later on: after turning off the coloring
+	if output[len(output)-1] == '\n' {
+		output = output[:len(output)-1]
+	}
+
 	var style = "monokai"
 	if v := os.Getenv("GODOCC_STYLE"); v != "" {
 		style = v
@@ -32,5 +38,6 @@ func main() {
 		panic(err)
 	}
 
-	stdout.Write([]byte("\033[0m"))
+	// turn off the coloring and reprint a newline
+	stdout.Write([]byte("\033[0m\n"))
 }
