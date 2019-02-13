@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 
 	"github.com/alecthomas/chroma/quick"
+	colorable "github.com/mattn/go-colorable"
 )
 
 func main() {
@@ -24,12 +24,13 @@ func main() {
 		style = v
 	}
 
-	err = quick.Highlight(os.Stdout,
+	stdout := colorable.NewColorableStdout()
+	err = quick.Highlight(stdout,
 		string(output),
 		"go", "terminal256", style)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Print("\033[0m")
+	stdout.Write([]byte("\033[0m"))
 }
