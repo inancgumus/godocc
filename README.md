@@ -28,6 +28,8 @@ godocc comes with many colors! Configure the color of the output by setting the 
 $ GODOCC_STYLE="dracula"
 ```
 
-**Available styles are:** abap, algol, arduino, autumn, borland, bw, colorful, dracula, emacs, friendly, fruity, github, igor, lovelace, manni, monokai, monokailight, murphy, native, paraiso-dark, paraiso-light, pastie, perldoc, pygments, rainbow_dash, rrt, solarized-dark, solarized-light256, solarized-light, swapoff, tango, trac, vim, vs, xcode.
+**My favorite styles:** dracula, monokai, fruity, native, paraiso-dark, pygments, rainbow_dash, rrt, solarized-dark, swapoff, vim.
+
+**Other styles:** abap, algol, arduino, autumn, borland, bw, colorful, emacs, friendly, github, igor, lovelace, manni, monokailight, murphy, paraiso-light, pastie, perldoc, solarized-light256, solarized-light, tango, trac, vs, xcode.
 
 _NOTE: Godocc uses the awesome [Chroma](https://github.com/alecthomas/chroma) package underneath._
