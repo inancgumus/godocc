@@ -15,9 +15,14 @@ Accepts all the arguments and flags `go doc` works with. Godocc is just a simple
 Example:
 
 ```
-$ godocc ioutil WriteFile
+$ godocc io Writer
 ```
 ![godocc sample 1](samples/sample3.png)
+
+```
+$ godocc ioutil
+```
+
 ![godocc sample 2](samples/sample4.png)
 
 ## Styling
