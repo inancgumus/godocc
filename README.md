@@ -17,8 +17,8 @@ Example:
 ```
 $ godocc ioutil WriteFile
 ```
-![godocc sample 1](samples/sample1.png)
-![godocc sample 2](samples/sample2.png)
+![godocc sample 1](samples/sample3.png)
+![godocc sample 2](samples/sample4.png)
 
 ## Styling
 
