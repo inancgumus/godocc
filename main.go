@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	// capture the input, output and args of `go doc`.
 	args := []string{"doc"}
 	args = append(args, os.Args[1:]...)
 	cmd := exec.Command("go", args...)
@@ -16,24 +17,26 @@ func main() {
 
 	// ignore the error for now.
 	// output contains the error as well.
-	// so the error will be printed.
+	// so the error will be printed eventually.
 	output, _ := cmd.CombinedOutput()
 
-	// remove the newline first
-	// then reprint later on: after turning off the coloring
+	// remove the newline first.
+	// reprint it later on: after turning off the coloring.
 	if output[len(output)-1] == '\n' {
 		output = output[:len(output)-1]
 	}
 
-	var style = "monokai"
+	// default style is dracula
+	var style = "dracula"
 	if v := os.Getenv("GODOCC_STYLE"); v != "" {
 		style = v
 	}
 
+	// get a cross-platform bash escape sequences emulator
 	stdout := colorable.NewColorableStdout()
-	err := quick.Highlight(stdout, string(output),
-		"go", "terminal256", style)
-	if err != nil {
+	
+	// colorize and print the documentation
+	if err := quick.Highlight(stdout, string(output), "go", "terminal256", style); err != nil {
 		panic(err)
 	}
 
