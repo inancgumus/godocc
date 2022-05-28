@@ -5,7 +5,7 @@ Like `go doc` but with colors.
 ## Installation
 
 ```
-$ go get -u github.com/inancgumus/godocc
+$ go install github.com/inancgumus/godocc@latest
 ```
 
 ## Usage
